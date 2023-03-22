@@ -1,9 +1,15 @@
 const container = document.getElementById('container');
+let gridSize = 16;
 
-for (let i = 0; i < 16*16 ; i++) {
-    let square = document.createElement('div');
-    square.className = 'square';
-    container.appendChild(square);
+for (let i = 0; i < gridSize ; i++) {
+    let row = document.createElement('div');
+    row.className = 'row';
+    for (let j = 0; j < gridSize ; j++) {
+        let square = document.createElement('div');
+        square.className = 'square';
+        row.appendChild(square);
+    }
+    container.appendChild(row);
 }
 
 const squares = document.querySelectorAll('.square');
