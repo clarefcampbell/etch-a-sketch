@@ -1,5 +1,5 @@
 const container = document.getElementById('container');
-let gridSize = 64;
+let gridSize = 16;
 
 function generateGrid (gridSize) {
     for (let i = 0; i < gridSize ; i++) {
@@ -21,11 +21,6 @@ function startHover() {
     const squares = document.querySelectorAll('.square');
     squares.forEach(square => square.addEventListener('mouseover', (e) => {
         e.target.style.backgroundColor = getColor();
-    }));
-
-    squares.forEach(square => square.addEventListener('mouseout', (e) => {
-        e.target.classList.remove('mouseover');
-        e.target.style.backgroundColor = null;
     }));
 }
 
