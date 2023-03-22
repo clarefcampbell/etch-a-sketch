@@ -20,11 +20,12 @@ document.addEventListener("DOMContentLoaded", generateGrid(gridSize));
 function startHover() {
     const squares = document.querySelectorAll('.square');
     squares.forEach(square => square.addEventListener('mouseover', (e) => {
-        e.target.classList.add('mouseover');
+        e.target.style.backgroundColor = getColor();
     }));
 
     squares.forEach(square => square.addEventListener('mouseout', (e) => {
         e.target.classList.remove('mouseover');
+        e.target.style.backgroundColor = null;
     }));
 }
 
@@ -40,3 +41,7 @@ btn.addEventListener('click', () => {
     clearGrid();
     generateGrid(userGridSize);
 });
+
+function getColor() {
+    return 'black';
+}
